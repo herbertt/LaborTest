@@ -21,7 +21,6 @@ public class AITest {
     @Mock
     OrderManager order;
 
-
     @Test
     public void myTestOK() {
 
@@ -33,7 +32,7 @@ public class AITest {
                 .tools(new Lang4jTools(order))
                 .chatMemory(MessageWindowChatMemory.withMaxMessages(10))
                 .build();
-        String token = assistant.chat("give a sql script to List of customer_id in order table");
+        String token = assistant.chat("give the day of order most registered","1", "Order");
         System.out.println(token);
 
     }
